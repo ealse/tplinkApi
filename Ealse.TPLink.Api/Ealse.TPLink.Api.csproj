@@ -3,7 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
+    <Authors>Ealse</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>TPLink Kasa</PackageTags>
+    <Description>API in .NET core 3.1 to communicate with the TP-Link HS100/HS110 wifi controlled power outlet</Description>
+    <PackageProjectUrl>https://github.com/ealse/tplinkApi</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
