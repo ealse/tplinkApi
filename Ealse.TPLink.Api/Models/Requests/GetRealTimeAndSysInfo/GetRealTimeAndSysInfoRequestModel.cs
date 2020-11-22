@@ -1,5 +1,4 @@
 ﻿using Ealse.TPLink.Api.Models.Helpers;
-using System.Text;
 
 namespace Ealse.TPLink.Api.Models.Requests
 {

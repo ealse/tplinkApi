@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ealse.TPLink.Api", "Ealse.TPLink.Api\Ealse.TPLink.Api.csproj", "{B83F6C22-832B-4FBC-A914-ACD8D8D194BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{4FD741F5-2940-4963-8F7F-2CE34589D057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{60E6F1D4-D846-43C1-BB90-B520AF790BD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B83F6C22-832B-4FBC-A914-ACD8D8D194BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B83F6C22-832B-4FBC-A914-ACD8D8D194BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B83F6C22-832B-4FBC-A914-ACD8D8D194BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FD741F5-2940-4963-8F7F-2CE34589D057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FD741F5-2940-4963-8F7F-2CE34589D057}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FD741F5-2940-4963-8F7F-2CE34589D057}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FD741F5-2940-4963-8F7F-2CE34589D057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E6F1D4-D846-43C1-BB90-B520AF790BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E6F1D4-D846-43C1-BB90-B520AF790BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E6F1D4-D846-43C1-BB90-B520AF790BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E6F1D4-D846-43C1-BB90-B520AF790BD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

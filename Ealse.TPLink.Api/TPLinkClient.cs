@@ -1,48 +1,40 @@
 ﻿using System;
 using System.Net.Http;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Ealse.TPLink.Api.Models.Requests;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-
 
 namespace Ealse.TPLink.Api
 {
     public partial class TPLinkClient : IDisposable
     {
-        private string Username { get; set; }
+        public string? Token { get; set; }
 
-        private string Password { get; set; }
-
-        private string Token { get; set; }
-
-        private JsonSerializerOptions JsonSerializerOptions => new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-
+#pragma warning disable S1075 // URIs should not be hardcoded
         public Uri TPLinkApiBaseUrl => new Uri("https://eu-wap.tplinkcloud.com/");
+#pragma warning restore S1075 // URIs should not be hardcoded
 
         public string UserAgent => "Dalvik/2.1.0 (Linux; U; Android 6.0.1; A0001 Build/M4B30X)";
 
         private readonly HttpClient client;
 
-        public TPLinkClient(string username, string password)
-        {
-            this.Username = username;
-            this.Password = password;
+        private JsonSerializerOptions JsonSerializerOptions => new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
 
+        public TPLinkClient(string? token = null) 
+        {
+            this.Token = token;
             this.client = CreateHttpClient();
         }
 
-        public TPLinkClient(string username, string password, string token) : this(username, password)
-        {
-            this.Token = token;
-        }
-
-        public void Dispose()
+        protected virtual void Dispose(bool disposing)
         {
             this.client?.Dispose();
+        }        
+        
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         private HttpClient CreateHttpClient()
@@ -62,31 +54,25 @@ namespace Ealse.TPLink.Api
             return httpClient;
         }
 
-        protected virtual async Task<TResponse> SendAsync<TRequest, TResponse>(Uri uri) where TRequest : new()
+        protected virtual async Task<TResponse?> SendAsync<TRequest, TResponse>(TRequest? requestData = null) where TRequest : class, new() where TResponse: class
         {
-            using var request = new HttpRequestMessage(HttpMethod.Post, uri);
-            var requestBody = JsonSerializer.Serialize(new TRequest(), JsonSerializerOptions);
+            using var request = new HttpRequestMessage(HttpMethod.Post, $"{TPLinkApiBaseUrl}?token={Token}");
+            var requestBody = JsonSerializer.Serialize(requestData ?? new TRequest(), JsonSerializerOptions);
             request.Content = new StringContent(requestBody);
             request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            try
-            {
-                using (var response = await client.SendAsync(request))
-                {
-                    if (response != null && response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        var responseString = await response.Content.ReadAsStringAsync();
+            using var response = await client.SendAsync(request);
 
-                        var responseEntity = JsonSerializer.Deserialize<TResponse>(responseString, JsonSerializerOptions);
-                        return responseEntity;
-                    }
-                    return default;
-                }
-            }
-            catch (Exception)
+            if (response != null && response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                throw;
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                var responseEntity = JsonSerializer.Deserialize<TResponse>(responseString, JsonSerializerOptions);
+                return responseEntity;
             }
+
+            return default;
+
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using Ealse.TPLink.Api.Models.Helpers;
+﻿using Ealse.TPLink.Api.Models.Helpers;
 using System.Collections.Generic;
 
 namespace Ealse.TPLink.Api.Models.Requests
@@ -9,6 +8,7 @@ namespace Ealse.TPLink.Api.Models.Requests
         public GetDeviceListRequestModel()
         {
             base.Method = MethodType.GetDeviceList;
+            base.Params = new Dictionary<string, string>();
         }
     }
 }

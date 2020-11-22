@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Ealse.TPLink.Api.Models.Requests
 {
     public class RealTimeAndSysInfoParamsModel
     {
-        public GetSysInfo? System { get; set; }
+        public GetSysInfo? System { get; set; } = new GetSysInfo();
 
-        public Emeter? Emeter { get; set; }
+        public Emeter? Emeter { get; set; } = new Emeter();
     }
 
     public class GetSysInfo

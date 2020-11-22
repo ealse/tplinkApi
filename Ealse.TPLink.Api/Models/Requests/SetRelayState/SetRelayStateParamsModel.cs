@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ealse.TPLink.Api.Models.Requests
+﻿namespace Ealse.TPLink.Api.Models.Requests
 {
     public class SetRelayStateParamsModel
     {
@@ -11,6 +7,11 @@ namespace Ealse.TPLink.Api.Models.Requests
 
     public class SetRelayState
     {
-        public Tuple<string,int>? Set_relay_state { get; set; }
+        public RelayState? Set_relay_state { get; set; }
+    }
+
+    public class RelayState
+    {
+        public int? State { get; set; }
     }
 }

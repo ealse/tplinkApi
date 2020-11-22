@@ -1,62 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ealse.TPLink.Api.Models.Responses
+﻿namespace Ealse.TPLink.Api.Models.Responses
 {
     public class GetSysInfoModel
 	{
-		public string? sw_ver { get; set; }
+		public string? Sw_ver { get; set; }
 
-		public string? hw_ver { get; set; }
+		public string? Hw_ver { get; set; }
 
-		public string? model { get; set; }
+		public string? Model { get; set; }
 
-		public string? deviceId { get; set; }
+		public string? DeviceId { get; set; }
 
-		public string? oemId { get; set; }
+		public string? OemId { get; set; }
 
-		public string? hwId { get; set; }
+		public string? HwId { get; set; }
 
-		public int? rssi { get; set; }
+		public int? Rssi { get; set; }
 
-		public int? longitude_i { get; set; }
+		public int? Longitude_i { get; set; }
 
-		public int? latitude_i { get; set; }
+		public int? Latitude_i { get; set; }
 
-		public string? alias { get; set; }
+		public string? Alias { get; set; }
 
-		public string? status { get; set; }
+		public string? Status { get; set; }
 
-		public string? mic_type { get; set; }
+		public string? Mic_type { get; set; }
 
-		public string? feature { get; set; }
+		public string? Feature { get; set; }
 
-		public string? mac { get; set; }
+		public string? Mac { get; set; }
 
-		public int? updating { get; set; }
+		public int? Updating { get; set; }
 
-		public int? led_off { get; set; }
+		public int? Led_off { get; set; }
 
-		public int? relay_state { get; set; }
+		public int? Relay_state { get; set; }
 
-		public int? on_time { get; set; }
+		public int? On_time { get; set; }
 
-		public string? active_mode { get; set; }
+		public string? Active_mode { get; set; }
 
-		public string? icon_hash { get; set; }
+		public string? Icon_hash { get; set; }
 
-		public string? dev_name { get; set; }
+		public string? Dev_name { get; set; }
 
-		public NextActionObject? next_action { get; set; }
+		public NextActionObject? Next_action { get; set; }
 
-		public int? ntc_state { get; set; }
+		public int? Ntc_state { get; set; }
 
-		public int? err_code { get; set; }
+		public int? Err_code { get; set; }
 
 		public class NextActionObject
 		{
-			public int? type { get; set; }
+			public int? Type { get; set; }
 		}
 	}
 }

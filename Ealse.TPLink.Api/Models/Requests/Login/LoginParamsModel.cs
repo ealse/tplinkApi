@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ealse.TPLink.Api.Models.Requests
 {
     public class LoginParamsModel
     {
-        public string? AccountId { get; set; }
+        public string? AppType => "Kasa_Android";
 
-        public string? RegTime { get; set; }
+        public string? CloudUserName { get; set; }
 
-        public string? Email { get; set; }
+        public string? CloudPassword { get; set; }
 
-        public string? Token { get; set; }
+        public Guid? TerminalUUID { get; set; }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ealse.TPLink.Api.Models.Helpers
+﻿namespace Ealse.TPLink.Api.Models.Helpers
 {
 	public static class MethodType
 	{

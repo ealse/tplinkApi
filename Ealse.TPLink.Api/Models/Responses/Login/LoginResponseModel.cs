@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ealse.TPLink.Api.Models.Responses
+﻿namespace Ealse.TPLink.Api.Models.Responses
 {
-    public class LoginResponseModel : DefaultResponseModel<LoginResponseModel>
+    public class LoginResponseModel : DefaultResponseModel<LoginModel>
     {
     }
 }

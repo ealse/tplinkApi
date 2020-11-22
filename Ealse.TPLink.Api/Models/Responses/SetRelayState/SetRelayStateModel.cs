@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ealse.TPLink.Api.Models.Responses
+﻿namespace Ealse.TPLink.Api.Models.Responses
 {
     public class SetRelayStateModel
     {
@@ -11,6 +7,11 @@ namespace Ealse.TPLink.Api.Models.Responses
 
     public class SetRelayStateResponse
     {
-        public Tuple<string, int>? Set_relay_state { get; set; }
+        public RelayStateResponse? Set_relay_state { get; set; }
+    }
+
+    public class RelayStateResponse
+    {
+        public int? Err_code { get; set; }
     }
 }
