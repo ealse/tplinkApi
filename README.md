@@ -51,7 +51,7 @@ await client.GetRealTimeAndSysInfoAsync(DeviceId);
 To set the relay state of the TP-Link HS100/HS110:
 
 ```C#
-await client.SetRelayStateAsync(devices.Result?.DeviceList?.FirstOrDefault()?.DeviceId, 1);
+await client.SetRelayStateAsync(DeviceId, 1);
 ```
 
 ## Available via NuGet
